@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: evidenceuser
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: evidencedb
+    ports:
+      - "5433:5432"
