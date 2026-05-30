@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 from app.core.config import settings
 
-DATABASE_URL = settings.DATABASE_URL
+DATABASE_URL = settings.database_url
 
 # Create the database engine.
 # Engine is responsible for managing the connection between FastAPI and PostgreSQL.

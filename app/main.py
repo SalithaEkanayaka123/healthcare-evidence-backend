@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from app.core.config import settings
 from app.api.evidence_routes import router as evidence_router
+from app.db.database import Base, engine
+
+Base.metadata.create_all(bind=engine)
 
 # Initialize the FastAPI application for the Healthcare Evidence Backend.
 # FastAPI is chosen for this application because:
