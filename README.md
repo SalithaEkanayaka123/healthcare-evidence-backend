@@ -128,16 +128,6 @@ pip install -r requirements.txt
 
 ### 4️⃣ Configure Environment Variables
 
-Create a `.env` file in the project root:
-
-```env
-APP_NAME=Healthcare Evidence Backend
-APP_VERSION=1.0.0
-DATABASE_URL=postgresql://postgres:your_password@localhost:5432/healthcare_evidence_db
-```
-
-> Replace `your_password` and database name according to your local PostgreSQL setup.
-
 ### 5️⃣ Run the Application
 
 ```bash
