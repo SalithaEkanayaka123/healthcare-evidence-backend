@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from app.core.config import settings
+from app.api.evidence_routes import router as evidence_router
 
 # Initialize the FastAPI application for the Healthcare Evidence Backend.
 # FastAPI is chosen for this application because:
@@ -8,16 +10,21 @@ from fastapi import FastAPI
 # - Structured routing: supports clean separation of evidence routes (evidence_routes.py) and services
 # - Evidence summarization: efficient request handling for the summary_service.py workloads
 app = FastAPI(
-    title="Healthcare Evidence Backend",
-    version="1.0.0",
+    title=settings.app_name,
+    version=settings.app_version,
     description="Backend API for healthcare evidence management"
+)
+
+app.include_router(
+    evidence_router,
+    prefix = "/api/evidence",
+    tags=["Evidence"]
 )
 
 # Health check endpoint to verify the service is running
 @app.get("/health")
 def health_check():
-    # Return service status and name
-    return{
+    return {
         "status": "UP",
-        "service": "healthcare-evidence-backend"
+        "service": settings.app_name
     }
