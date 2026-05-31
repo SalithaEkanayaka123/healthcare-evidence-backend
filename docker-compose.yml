@@ -1,9 +1,27 @@
 services:
   postgres:
     image: postgres:16
+    container_name: evidence-postgres
     environment:
       POSTGRES_USER: evidenceuser
       POSTGRES_PASSWORD: password
       POSTGRES_DB: evidencedb
     ports:
       - "5433:5432"
+    volumes:
+      - evidence_pg_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: healthcare-evidence-backend
+    depends_on:
+      - postgres
+    environment:
+      APP_NAME: Healthcare Evidence Backend
+      APP_VERSION: 1.0.0
+      DATABASE_URL: postgresql+psycopg2://evidenceuser:password@postgres:5432/evidencedb
+    ports:
+      - "8000:8000"
+
+volumes:
+  evidence_pg_data:
