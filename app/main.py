@@ -1,7 +1,10 @@
 from fastapi import FastAPI
-from app.core.config import settings
+
 from app.api.evidence_routes import router as evidence_router
+from app.core.config import settings
 from app.db.database import Base, engine
+from app.exceptions.global_exception_handler import general_exception_handler
+from app.models.evidence import Evidence
 
 Base.metadata.create_all(bind=engine)
 
@@ -18,13 +21,15 @@ app = FastAPI(
     description="Backend API for healthcare evidence management"
 )
 
+app.add_exception_handler(Exception, general_exception_handler)
+
 app.include_router(
     evidence_router,
-    prefix = "/api/evidence",
+    prefix="/api/evidence",
     tags=["Evidence"]
 )
 
-# Health check endpoint to verify the service is running
+
 @app.get("/health")
 def health_check():
     return {
