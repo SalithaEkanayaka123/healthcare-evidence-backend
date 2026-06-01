@@ -5,6 +5,9 @@ from app.core.config import settings
 from app.db.database import Base, engine
 from app.exceptions.global_exception_handler import general_exception_handler
 from app.models.evidence import Evidence
+from app.core.logging_config import configure_logging
+
+configure_logging()
 
 Base.metadata.create_all(bind=engine)
 
