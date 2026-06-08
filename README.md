@@ -272,7 +272,7 @@ Example response:
 ```json
 {
   "evidence_id": 1,
-  "summary": "Summary for 'Diabetic Retinopathy CNN Study' : CNN models can classify diabetic retinopathy images with useful performance when preprocessing, augmentation, and validation techniques are applied properly.This evidence may support healthcare decision-making, but it should be reviewed by a domain expert."
+  "summary": "Summary for 'Diabetic Retinopathy CNN Study': CNN models can classify diabetic retinopathy images with useful performance when preprocessing, augmentation, and validation techniques are applied properly. This evidence may support healthcare decision-making, but it should be reviewed by a domain expert."
 }
 ```
 
