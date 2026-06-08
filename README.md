@@ -1,5 +1,7 @@
 # 🏥 Healthcare Evidence Backend
 
+![Backend CI](https://github.com/SalithaEkanayaka123/healthcare-evidence-backend/actions/workflows/backend-ci.yml/badge.svg)
+
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
