@@ -130,14 +130,41 @@ pip install -r requirements.txt
 
 ### 4️⃣ Configure Environment Variables
 
+Create a `.env` file in the project root and configure the database connection.
+
+```env
+APP_NAME=Healthcare Evidence Backend
+APP_VERSION=1.0.0
+DATABASE_URL=postgresql+psycopg2://evidenceuser:password@localhost:5432/evidencedb
+```
+
 ### 🐳 Running with Docker
 
 This project includes Docker support for running the FastAPI backend with PostgreSQL.
 
 ```bash
 docker compose up --build
+```
 
-### 5️⃣ Run the Application
+The API will be available at:
+
+```text
+http://localhost:8000
+```
+
+Swagger UI:
+
+```text
+http://localhost:8000/docs
+```
+
+To stop the containers:
+
+```bash
+docker compose down
+```
+
+### 5️⃣ Run the Application Locally
 
 ```bash
 uvicorn app.main:app --reload
