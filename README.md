@@ -130,6 +130,13 @@ pip install -r requirements.txt
 
 ### 4️⃣ Configure Environment Variables
 
+### 🐳 Running with Docker
+
+This project includes Docker support for running the FastAPI backend with PostgreSQL.
+
+```bash
+docker compose up --build
+
 ### 5️⃣ Run the Application
 
 ```bash
