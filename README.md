@@ -347,15 +347,15 @@ This project is useful for learning:
 ## 🚧 Future Improvements
 
 - Add Alembic database migrations
-- Add proper unit and integration tests
 - Add pagination for evidence listing
-- Add search and filtering by title/source
+- Add search and filtering by title/source/content
 - Add authentication and authorization
-- Improve summary generation using an LLM
-- Add Docker support
-- Add CI/CD workflow using GitHub Actions
 - Add global exception handling
-- Add logging and monitoring
+- Add structured logging
+- Improve summary generation using an LLM
+- Add embeddings and RAG-based question answering
+- Add PostgreSQL pgvector support for semantic search
+- Add API rate limiting and production-ready monitoring
 
 ---
 
